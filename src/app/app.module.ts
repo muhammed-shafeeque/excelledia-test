@@ -12,12 +12,14 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { OrganizationComponent } from './views/organization/organization.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslatePipe } from './shared/translate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    OrganizationComponent
+    OrganizationComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
