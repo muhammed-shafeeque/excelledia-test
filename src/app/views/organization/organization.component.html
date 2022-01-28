@@ -4,22 +4,22 @@
 
         <div class="form-out">
             <div class="form-inn">
-            <form >
+            <form [formGroup]="addform" (ngSubmit)="onSubit(addform.value)">
               <div class="example-form">
                 <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Favorite food</mat-label>
-                  <input matInput placeholder="Ex. Pizza" >
+                  <mat-label>Tittle</mat-label>
+                  <input matInput placeholder="Ex. Pizza" formControlName="title">
                 </mat-form-field>
   
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Leave a comment</mat-label>
-                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
                   </mat-form-field>
                 
               </div>
   
-              <button mat-raised-button color="primary" type="submit" class="mrgn-l75">Submit</button>
-              <button mat-raised-button color="accent" class="mrgn-l2">Cancel</button>
+              <button mat-raised-button color="primary" type="submit" class="mrgn-l75" >Submit</button>
+              <button mat-raised-button color="accent" class="mrgn-l2" (click)="cancel()">Cancel</button>
             </form>
           </div>
             

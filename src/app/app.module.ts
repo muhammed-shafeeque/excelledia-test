@@ -11,6 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { OrganizationComponent } from './views/organization/organization.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,10 @@ import { OrganizationComponent } from './views/organization/organization.compone
     MatTableModule,
     MatInputModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+
 
     RouterModule.forRoot(AppRoutingModule, {useHash: false}),
   ],

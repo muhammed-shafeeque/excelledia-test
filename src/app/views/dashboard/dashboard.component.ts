@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MainService } from 'src/app/shared/api-service/main.service';
+import { SharedDataService } from 'src/app/shared/api-service/shared-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +14,9 @@ export class DashboardComponent implements OnInit {
   dataSource = [];
   allInfo: any;
   
-  constructor(private service : MainService) { }
+  constructor(private service : MainService,
+              private sharedata : SharedDataService,
+              private router : Router) { }
 
   ngOnInit() {
     this.getAllList();
@@ -23,6 +27,19 @@ export class DashboardComponent implements OnInit {
       this.allInfo = res;
       this.allInfo = this.allInfo.data;
       this.dataSource = this.allInfo;
+    });
+  }
+
+  onEdit(data :any){
+    this.sharedata.sendData(data);
+    this.router.navigate(['/organization']);
+  }
+
+  onDelete(data :any){
+    this.service.deletePolicy(data.id).subscribe(res =>{
+      if(res){
+          this.getAllList();
+      }
     });
   }
 

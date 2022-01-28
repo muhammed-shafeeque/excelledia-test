@@ -23,5 +23,16 @@ export class MainService {
      return this.http.get(this.baseApiUrl + 'api/v1/organization-policies', {headers: this.headers})
    }
 
+   postPolicy(zone : any){
+     return this.http.post(this.baseApiUrl + 'api/v1/organization-policies',zone, {headers: this.headers})
+   }
+
+   deletePolicy(id : any){
+    return this.http.delete(this.baseApiUrl + 'api/v1/organization-policies/'+id, {headers: this.headers})
+   }
+
+   updatePolicy(id : any,zone : any){
+    return this.http.put(this.baseApiUrl + 'api/v1/organization-policies/'+id,zone, {headers: this.headers})
+   }
 
 }
