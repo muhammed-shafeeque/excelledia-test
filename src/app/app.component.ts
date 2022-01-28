@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'excelledia';
+
+  constructor(private router : Router){
+
+  }
+
+
+  addOrganization(){
+    this.router.navigate(['/organization']);
+  }
 }
